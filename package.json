@@ -1,6 +1,8 @@
 {
   "name": "cordova-cra-live-reload",
   "version": "0.1.0",
+  "description": "Live reload when developing on Cordova + CRA",
+  "private": false,
   "main": "index.js",
   "license": "MIT",
   "bin": {
@@ -12,5 +14,15 @@
   "engines": {
     "node": ">=8.3.0"
   },
-  "keywords": ["cordova", "create-react-app", "live-reload"]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzzDaEMoNzzz/cordova-cra-live-reload"
+  },
+  "keywords": ["cordova", "create-react-app", "live-reload"],
+  "files": [
+    "/index.js",
+    "/bin",
+    "/scripts",
+    "/utils"
+  ]
 }
