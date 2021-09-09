@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const waitOn = require("wait-on");
 const runDevServer = require("../scripts/runDevServer");
 const runCordovaCommand = require("../scripts/runCordovaCommand");

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "bin": {
-    "cordova-cra-live-reload": "bin/index.js"
+    "cordova-cra-live-reload": "./bin/index.js"
   },
   "dependencies": {
     "wait-on": "^6.0.0"
