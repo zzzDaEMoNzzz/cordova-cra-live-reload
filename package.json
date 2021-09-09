@@ -1,0 +1,16 @@
+{
+  "name": "cordova-cra-live-reload",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "cordova-cra-live-reload": "bin/index.js"
+  },
+  "dependencies": {
+    "wait-on": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=8.3.0"
+  },
+  "keywords": ["cordova", "create-react-app", "live-reload"]
+}
