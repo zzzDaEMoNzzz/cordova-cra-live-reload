@@ -1,5 +1,8 @@
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
 process.env.PORT = process.env.PORT || "3000";
+if (!process.env.OPEN_BROWSER) {
+  process.env.BROWSER = "none";
+}
 
 const path = require("path");
 const loadConfig = require("../utils/loadConfig");

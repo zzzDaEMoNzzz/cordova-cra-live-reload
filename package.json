@@ -1,6 +1,6 @@
 {
   "name": "cordova-cra-live-reload",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Live reload when developing on Cordova + CRA",
   "private": false,
   "main": "index.js",
