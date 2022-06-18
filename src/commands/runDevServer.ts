@@ -4,29 +4,28 @@ if (!process.env.OPEN_BROWSER) {
   process.env.BROWSER = "none";
 }
 
-const path = require("path");
-const loadConfig = require("../utils/loadConfig");
+import path from "path";
+import loadConfig from "../utils/loadConfig";
 
-module.exports = () => {
+const runDevServer = () => {
   const config = loadConfig();
   const cordovaScriptsPath = path.join(config.cordovaPath, "platforms/android/platform_www");
 
-  // change current working directory for correct paths in config
   process.chdir(config.reactPath);
 
-  // load devServer config
   const devServerConfigPath = path.join(config.reactPath, "node_modules/react-scripts/config/webpackDevServer.config.js");
   const devServerConfig = require(devServerConfigPath)();
 
-  // add to config cordova.js and plugins scripts
   devServerConfig.contentBase = [
     devServerConfig.contentBase,
     cordovaScriptsPath
   ];
 
-  // add modified config to cache
-  require.cache[require.resolve(devServerConfigPath)].exports = () => devServerConfig;
+  const devConfig = require.cache[require.resolve(devServerConfigPath)];
+  if (!devConfig) throw new Error('Failed to load CRA config');
+  devConfig.exports = () => devServerConfig;
 
-  // run devServer
   require(path.join(config.reactPath, "node_modules/react-scripts/scripts/start"));
 };
+
+export default runDevServer;

@@ -8,21 +8,10 @@
 $ npm install cordova-cra-live-reload --save-dev
 ```
 
-#### 2) Create `live-reload-config.js` file in the root directory of your Cordova project
+#### 2) Run the following command to create `live-reload-config.js` file
 
-```javascript
-const path = require("path");
-const { getLocalAddress } = require("cordova-cra-live-reload");
-
-module.exports = {
-  reactPath: path.join(__dirname, "../frontend"), // path to your React project directory
-  templateData: {
-    CONTENT_SRC: {
-      build: "index.html",
-      run: `http://${getLocalAddress()}:3000/`
-    }
-  }
-};
+```bash
+$ cordova-cra-live-reload init
 ```
 
 #### 3) Rename `config.xml` file to `config.template.xml`
@@ -31,15 +20,6 @@ module.exports = {
 
 ```xml
 <content src="{{CONTENT_SRC}}" />
-```
-
-#### 5) In `package.json` add following `scripts`
-
-```json
-{
-    "dev": "cordova-cra-live-reload run",
-    "build": "cordova-cra-live-reload build"
-}
 ```
 
 ## How to use it
